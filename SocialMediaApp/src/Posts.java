@@ -1,96 +1,94 @@
-package com.mycompany.advancedproject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Posts {
-    private String name;
+public class Post {
+    private String username;
     private String postDate;
-    private int numofLikes;
-    private int numofShares;
-    private int numofComments;
-    private List<String> postsList;
-    
-    //CONSTRUCTOR
-    public Posts(String name, String postDate, int numofLikes, int numofShares, int numofComments){
-        this.name = name;
+    private int numLikes;
+    private int numShares;
+    private int numComments;
+    private List<String> comments;
+
+    // CONSTRUCTOR
+    public Post(String username, String postDate) {
+        this.username = username;
         this.postDate = postDate;
-        this.numofLikes = numofLikes;
-        this.numofShares = numofShares;
-        this.numofComments = numofComments;
-    }
-    
-    //SETTERS AND GETTERS
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
-    }
-    
-    public void setPostDate(String postDate){
-        this.postDate = postDate;
-    }
-    public String getPostDate(){
-        return postDate;
-    }    
-    
-    public void setNumLikes(int numofLikes){
-        this.numofLikes = numofLikes;
-    }
-    public int getNumLikes(){
-        return numofLikes;
-    }
-    
-    public void setNumShares(int numofShares){
-        this.numofShares = numofShares;
-    }
-    public int getNumShares(){
-        return numofShares;
-    }
-    
-    public void setNumComments(int numofComments){
-        this.numofComments = numofComments;
-    }
-    public int getNumComments(){
-        return numofComments;
-    }
-    
-    //METHOD TO DISPLAY POST
-    public void DisplayPost(){
-        System.out.println("Username: " +name);
-        System.out.println("Date: " +postDate);
-        System.out.println("Username: " +name);
-        System.out.println("Likes: " +numofLikes);
-        System.out.println("Comments: " +numofComments);
-        System.out.println("Shares: " +numofShares);
+        this.numLikes = 0;
+        this.numShares = 0;
+        this.numComments = 0;
+        this.comments = new ArrayList<>();
     }
 
-    //METHOD TO ADD LIKES, COMMENTS, SHARES
-    public void addNumLikes(){
-        numofLikes++;
-    } 
-    public void addNumComment(){
-        numofComments++;
+    // GETTERS AND SETTERS
+    public String getUsername() {
+        return username;
     }
-    public void addNumShares(){
-        numofShares++;
+
+    public void setUsername(String username) {
+        this.username = username;
     }
-    
-    //METHOD TO CREATE POST 
-    public void CreatPosts(String createPost){
-        postsList.add(createPost);
+
+    public String getPostDate() {
+        return postDate;
     }
-    
-    //METHOD TO REMOVE POST
-    public void RemovePost(int postIndex){
-        if(postIndex >= 0 && postIndex < postsList.size()){
-            postsList.remove(postIndex);
+
+    public void setPostDate(String postDate) {
+        this.postDate = postDate;
+    }
+
+    public int getNumLikes() {
+        return numLikes;
+    }
+
+    public void incrementLikes() {
+        this.numLikes++;
+    }
+
+    public int getNumShares() {
+        return numShares;
+    }
+
+    public void incrementShares() {
+        this.numShares++;
+    }
+
+    public int getNumComments() {
+        return numComments;
+    }
+
+    public void incrementComments() {
+        this.numComments++;
+    }
+
+    public List<String> getComments() {
+        return comments;
+    }
+
+    // METHOD TO ADD COMMENT
+    public void addComment(String comment) {
+        comments.add(comment);
+    }
+
+    // METHOD TO REMOVE COMMENT
+    public void removeComment(int commentIndex) {
+        if (commentIndex >= 0 && commentIndex < comments.size()) {
+            comments.remove(commentIndex);
         }
     }
-    //METHOD TO EDIT POST
-    public void EditPost(int postIndex, String NewPost){
-        if(postIndex >= 0 && postIndex < postsList.size()){
-            postsList.set(postIndex, NewPost);   
+
+    // METHOD TO EDIT COMMENT
+    public void editComment(int commentIndex, String newComment) {
+        if (commentIndex >= 0 && commentIndex < comments.size()) {
+            comments.set(commentIndex, newComment);
         }
+    }
+
+    // METHOD TO DISPLAY POST
+    public void displayPost() {
+        System.out.println("Username: " + username);
+        System.out.println("Date: " + postDate);
+        System.out.println("Likes: " + numLikes);
+        System.out.println("Comments: " + numComments);
+        System.out.println("Shares: " + numShares);
     }
 }

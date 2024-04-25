@@ -1,44 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
-package com.mycompany.socialmedia;
-
-/**
- *
- * @author kc
- */
-
-public class Socialmedia {
-
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
-
-class Likes extends Socialmedia {
-
+public class Likes {
     private int numOfLikes;
-    public Likes(int numOfLikes, boolean isFriend) {
-        super(); 
+
+    public Likes(int numOfLikes) {
         this.numOfLikes = numOfLikes;
-        System.out.println(numOfLikes) ;
+        System.out.println(numOfLikes);
     }
 
     public void addLikes(int likesAdded) {
-        numOfLikes ++;
+        numOfLikes++;
     }
 
     public void removeLikes(int likesRemoved) {
-        if (numOfLikes >=0) {
-            numOfLikes --;
+        if (numOfLikes > 0) {
+            numOfLikes--;
         }
     }
-    public int getnumlikes() {
+
+    public int getNumLikes() {
         return numOfLikes;
     }
 
-    public void setnumlikes(int numOfLikes) {
+    public void setNumLikes(int numOfLikes) {
         this.numOfLikes = numOfLikes;
     }
 }

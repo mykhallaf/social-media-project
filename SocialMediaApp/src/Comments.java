@@ -1,66 +1,77 @@
-public class comments {
+public class Comments {
     private String name;
     private int numofLikes;
     private int replies;
     private String date;
+    private List<String> commentList;
     
-    comments (String name, int numofLikes, int replies, String date) {
-        this.name;
-        this.numofLikes;
-        this.replies;
-        this.date;
+    public Comments(String name, int numofLikes, int replies, String date) {
+        this.name = name;
+        this.numofLikes = numofLikes;
+        this.replies = replies;
+        this.date = date;
+        this.commentList = new ArrayList<>();
     }
         
-        //geters
-       public String getname() {
-           return name;
-       }
-       
-       public int numofLikes() {
-           return numofLikes;
-       }
-       
-       public int replies() {
-           return replies;
-       }
-       
-       public String date() {
-           return = date;
-       }
-       
-        //Setters
-        public void String getname() {
-           this.name = name;
-       }
-       
-       public void int numofLikes() {
-           this.numofLikes = numofLikes;
-       }
-       
-       public void int replies() {
-           this.replies = replies;
-       }
-       
-       public void String date() {
-           this.date = date;
-       }
     
-    //Methods
+    public String getName() {
+        return name;
+    }
        
-    Void addComment() {
-        
+    public void setName(String name) {
+        this.name = name;
+    }
+       
+    
+    public int getNumofLikes() {
+        return numofLikes;
+    }
+       
+    public void setNumofLikes(int numofLikes) {
+        this.numofLikes = numofLikes;
+    }
+       
+    
+    public int getReplies() {
+        return replies;
+    }
+       
+    public void setReplies(int replies) {
+        this.replies = replies;
+    }
+       
+    
+    public String getDate() {
+        return date;
+    }
+       
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
+    
+     public void addComment(String commentText) {
+        commentList.add(commentText);
     }   
     
-    void removeComment() {
-        
+    public void removeComment(int commentIndex) {
+        if (commentIndex >= 0 && commentIndex < commentList.size()) {
+            commentList.remove(commentIndex);
+        }
     }
     
-    void edit() {
-        
+   public void editComment(int commentIndex, String newCommentText) {
+        if (commentIndex >= 0 && commentIndex < commentList.size()) {
+            commentList.set(commentIndex, newCommentText);
+        }
     }
     
-    void addLike() {
-        
+    public void addLike() {
+        numofLikes++;
+    } 
+
+    public void removeLike() {
+        if(numofLikes>0) {
+            numofLikes--;
     }
-        
 }

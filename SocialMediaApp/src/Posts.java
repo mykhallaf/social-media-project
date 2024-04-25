@@ -8,6 +8,9 @@ public class Post {
     private int numShares;
     private int numComments;
     private List<String> comments;
+    private List<String> imageUrls;
+    private List<String> videoUrls;
+    
 
     // CONSTRUCTOR
     public Post(String username, String postDate) {

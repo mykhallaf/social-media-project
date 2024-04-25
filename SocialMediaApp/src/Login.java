@@ -19,7 +19,7 @@ public class Login {
     void setpassword(String password) {
         this.password = password;
     }
-    boolean checkPassword(String inputPassword){
+    public boolean checkPassword(String inputPassword){
         return this.password.equals(inputPassword);
     }
     

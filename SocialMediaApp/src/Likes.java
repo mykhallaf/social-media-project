@@ -6,11 +6,11 @@ public class Likes {
         System.out.println(numOfLikes);
     }
 
-    public void addLikes(int likesAdded) {
+    public void addLikes() {
         numOfLikes++;
     }
 
-    public void removeLikes(int likesRemoved) {
+    public void removeLikes() {
         if (numOfLikes > 0) {
             numOfLikes--;
         }

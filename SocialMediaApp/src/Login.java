@@ -92,4 +92,4 @@ public class Login {
         return hasUppercase && hasDigit && hasSpecialChar;
     }
 }
-}
+

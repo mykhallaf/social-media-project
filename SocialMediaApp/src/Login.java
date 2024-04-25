@@ -22,15 +22,15 @@ public class Login {
         this.password = password;
     }
     
-    String getEmail(){
+    private String getEmail(){
         return email;
     }
     
-    String getPassword(){
+    private String getPassword(){
         return password;
     }
     
-    void setEmail(String email) {
+    private void setEmail(String email) {
         Objects.requireNonNull(email, "Email cannot be null");
         
         // Validate email format
@@ -41,7 +41,7 @@ public class Login {
         this.email = email;
     }
     
-    void setPassword(String password) {
+    private void setPassword(String password) {
         Objects.requireNonNull(password, "Password cannot be null");
         // Validate password (optional)
         if (!isValidPassword(password)) {

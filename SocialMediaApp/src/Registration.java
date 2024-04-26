@@ -12,7 +12,7 @@ public class Registration {
     public Registration(String name, String email, String password) {
     	userid++;
         System.out.println("Hello, Welcome to our project \nLets make your account");
-        System.out.println("\nUsername and Password Format\n\nUsernames cannot\n1)Have special Characters\n2)Be less than 5 letters\n3)Be more than 5 letters");
+        System.out.println("\nUsername Format\n\nUsernames cannot\n1)Have special Characters\n2)Be less than 5 letters\n3)Be more than 5 letters");
         if(checkName(name) == false) {
         	System.out.println("Error! Invalid username format");
        this.name = "default_user" + userid;

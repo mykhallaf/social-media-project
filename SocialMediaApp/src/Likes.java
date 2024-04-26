@@ -1,26 +1,27 @@
 public class Likes {
     private int numOfLikes;
 
-    public Likes(int numOfLikes) {
-        this.numOfLikes = numOfLikes;
-        System.out.println(numOfLikes);
+    public Likes() {
+        this.numOfLikes = 0;
     }
 
-    public void addLikes() {
-        numOfLikes++;
-    }
-
-    public void removeLikes() {
-        if (numOfLikes > 0) {
-            numOfLikes--;
-        }
-    }
-
-    public int getNumLikes() {
+    public int getNumOfLikes() {
         return numOfLikes;
     }
 
-    public void setNumLikes(int numOfLikes) {
+    public void setNumOfLikes(int numOfLikes) {
         this.numOfLikes = numOfLikes;
+    }
+
+    // Method to add a like
+    public void addLike() {
+        numOfLikes++;
+    }
+
+    // Method to remove a like (if likes are not already 0)
+    public void removeLike() {
+        if (numOfLikes > 0) {
+            numOfLikes--;
+        }
     }
 }

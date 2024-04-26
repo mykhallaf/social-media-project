@@ -6,13 +6,15 @@ public class User {
     private String profilePicUrl;
     private ArrayList<User> friendList;
     private ArrayList<String> interests;
+    private Login login;
 
-    public User(String username, String bio, String profilePicUrl) {
+    public User(String username, String bio, String profilePicUrl, Login login) {
         this.username = username;
         this.bio = bio;
         this.profilePicUrl = profilePicUrl;
         this.friendList = new ArrayList<>();
         this.interests = new ArrayList<>();
+        this.login = login;
     }
 
 

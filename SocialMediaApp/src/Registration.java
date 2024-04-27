@@ -35,7 +35,7 @@ public class Registration {
 	        	
 	        	this.name=name;
 	        }
-	        
+	        Objects.requireNonNull(email, "Email cannot be null");
 	        this.email = email;
 	        
 	        while(valPass(password) == false && passtrials !=0) {

@@ -14,8 +14,7 @@ public class Registration {
 	    private String email;
 	    private String password;
 	    private String picture; 
-	    private String bio;
-	    
+
 	    public Registration (String name, String email, String password) {
 	    	userid++;
 	        System.out.println("\nUsername and Password Format\n\nUsernames cannot\n⚫ Have special Characters\n⚫ Be less than 5 letters\n\nPasswords Must Contain at least\n⚫ 8 Characters\n⚫ 1 Capital Letter\n⚫ Numbers and Letters\n⚫ 1 Special Character ");

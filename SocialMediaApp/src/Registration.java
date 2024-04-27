@@ -135,5 +135,16 @@ public class Registration {
 		   }
 		   return false;
 	   }
+	private boolean isValidEmail(String email) {
+        try {
+            InternetAddress emailAddress = new InternetAddress(email);
+            // Ensure that the parsed email address has a valid format
+            emailAddress.validate();
+            return true;
+        } catch (AddressException e) {
+            // If an AddressException is thrown, the email address is invalid
+            return false;
+        }
+    }
 	   
 	}

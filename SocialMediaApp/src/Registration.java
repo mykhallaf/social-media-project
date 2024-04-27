@@ -1,6 +1,10 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Scanner;
+import java.util.Objects;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+
 
 public class Registration {
 		private static int userid;

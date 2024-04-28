@@ -5,11 +5,11 @@ public class Likes {
         this.numOfLikes = 0;
     }
 
-    public int getNumOfLikes() {
+    public int getLikes() {
         return numOfLikes;
     }
 
-    public void setNumOfLikes(int numOfLikes) {
+    public void setLikes(int numOfLikes) {
         this.numOfLikes = numOfLikes;
     }
 
@@ -18,7 +18,7 @@ public class Likes {
         numOfLikes++;
     }
 
-    // Method to remove a like (if likes are not already 0)
+    // Method to remove a like (if likes are not 0)
     public void removeLike() {
         if (numOfLikes > 0) {
             numOfLikes--;

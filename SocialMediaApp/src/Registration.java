@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -16,14 +17,16 @@ public class Registration {
     private String email;
     private String username;
     private String password;
-    private String fullName;
+    private String firstName;
+    private String lastName;
 
-    public Registration(String email, String username, String password, String fullName) {
+    public Registration(String email, String username, String password, String firstName, String lastName) {
         // Validate input data
         Objects.requireNonNull(email, "Email cannot be null");
         Objects.requireNonNull(username, "Username cannot be null");
         Objects.requireNonNull(password, "Password cannot be null");
-        Objects.requireNonNull(fullName, "Full name cannot be null");
+        Objects.requireNonNull(firstName, "First name cannot be null");
+        Objects.requireNonNull(lastName, "Last name cannot be null");
 
         // Validate email format
         if (!isValidEmail(email)) {
@@ -37,39 +40,36 @@ public class Registration {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.fullName = fullName;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public boolean registerUser() {
-        // Database connection
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
-            // SQL query to insert a user
-            String insertUserQuery = "INSERT INTO users (email, username, full_name) VALUES (?, ?, ?)";
+            // Prepare SQL query
+            String sql = "INSERT INTO users (email, password, first_name, last_name) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
 
-            // Prepare the SQL statement
-            try (PreparedStatement preparedStatement = connection.prepareStatement(insertUserQuery)) {
-                // Set parameters for the user
-                preparedStatement.setString(1, email);
-                preparedStatement.setString(2, username);
-                preparedStatement.setString(3, fullName);
+            // Set parameters
+            statement.setString(1, email);
+            statement.setString(2, password);
+            statement.setString(3, firstName);
+            statement.setString(4, lastName);
 
-                // Execute the query
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                // Check if the query was successful
-                if (rowsAffected > 0) {
-                    System.out.println("User registered successfully.");
-                    return true;
-                } else {
-                    System.out.println("Failed to register user.");
-                }
+            // Execute query
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("Registration successful!");
+                return true;
+            } else {
+                System.out.println("Registration failed!");
+                return false;
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
-
     // Email validation method using InternetAddress
     private boolean isValidEmail(String email) {
         try {
@@ -109,4 +109,5 @@ public class Registration {
         // Check if all required criteria are met
         return hasUppercase && hasDigit && hasSpecialChar;
     }
+
 }

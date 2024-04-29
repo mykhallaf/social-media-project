@@ -91,12 +91,6 @@ public class Post {
         }
     }
 
-    // METHOD TO DISPLAY POST
-    public void displayPost() {
-        System.out.println("Username: " + username);
-        System.out.println("Date: " + postDate);
-        System.out.println("Likes: " + numLikesList.size());
-        System.out.println("Comments: " + numComments);
-        System.out.println("Shares: " + numShares);
+
     }
 }

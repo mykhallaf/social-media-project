@@ -1,3 +1,4 @@
+/*deleted class*/
 public class Likes {
     private int numOfLikes;
 

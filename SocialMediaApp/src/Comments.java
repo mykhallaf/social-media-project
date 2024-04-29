@@ -10,7 +10,7 @@ public class Comments {
 
     public Comments(String name, List<Integer> numofLikesList, int replies, String date) {
         this.name = name;
-        this.numofLikes = new ArrayList<>(numofLikesList);
+        this.numofLikesList = new ArrayList<>(numofLikesList);
         this.replies = replies;
         this.date = date;
         this.commentList = new ArrayList<>();

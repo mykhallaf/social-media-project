@@ -3,14 +3,14 @@ import java.util.List;
 
 public class Comments {
     private String name;
-    private int numofLikes;
+   private List<Integer> numofLikesList;
     private int replies;
     private String date;
     private List<String> commentList;
 
-    public Comments(String name, int numofLikes, int replies, String date) {
+    public Comments(String name, List<Integer> numofLikesList, int replies, String date) {
         this.name = name;
-        this.numofLikes = numofLikes;
+        this.numofLikes = new ArrayList<>(numofLikesList);
         this.replies = replies;
         this.date = date;
         this.commentList = new ArrayList<>();
@@ -24,12 +24,12 @@ public class Comments {
         this.name = name;
     }
 
-    public int getNumofLikes() {
-        return numofLikes;
+    public List<Integer> getNumofLikesList() {
+        return numofLikesList;
     }
 
-    public void setNumofLikes(int numofLikes) {
-        this.numofLikes = numofLikes;
+    public void setNumofLikesList(List<Integer> numofLikesList) {
+        this.numofLikesList = new ArrayList<>(numofLikesList);
     }
 
     public int getReplies() {
@@ -64,13 +64,13 @@ public class Comments {
         }
     }
 
-    public void addLike() {
-        numofLikes++;
+    public void addLike(int likeCount) {
+        numofLikesList.add(likeCount);
     }
 
-    public void removeLike() {
-        if (numofLikes > 0) {
-            numofLikes--;
+    public void removeLike(int likeCount) {
+        if (likeCount >= 0) {
+            numofLikesList.remove(likeCount);
         }
     }
 }

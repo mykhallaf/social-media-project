@@ -4,7 +4,7 @@ import java.util.List;
 public class Post {
     private String username;
     private String postDate;
-    private int numLikes;
+    private List<Integer> numLikesList;
     private int numShares;
     private int numComments;
     private List<String> comments;
@@ -16,7 +16,7 @@ public class Post {
     public Post(String username, String postDate) {
         this.username = username;
         this.postDate = postDate;
-        this.numLikes = 0;
+        this.numLikesList = new ArrayList<>();
         this.numShares = 0;
         this.numComments = 0;
         this.comments = new ArrayList<>();
@@ -39,14 +39,19 @@ public class Post {
         this.postDate = postDate;
     }
 
-    public int getNumLikes() {
-        return numLikes;
+    public List<Integer> getNumLikesList() {
+        return numLikesList;
     }
 
-    public void incrementLikes() {
-        this.numLikes++;
-    }
+    public void setNumLikesList(List<Integer> numLikesList) {
 
+        this.numLikesList = numLikesList;
+
+    }
+    public void addLike(int likeCount) {
+
+        numLikesList.add(likeCount);
+    }
     public int getNumShares() {
         return numShares;
     }
@@ -90,7 +95,7 @@ public class Post {
     public void displayPost() {
         System.out.println("Username: " + username);
         System.out.println("Date: " + postDate);
-        System.out.println("Likes: " + numLikes);
+        System.out.println("Likes: " + numLikesList.size());
         System.out.println("Comments: " + numComments);
         System.out.println("Shares: " + numShares);
     }

@@ -7,6 +7,8 @@ public class Comments {
     private int replies;
     private String date;
     private List<String> commentList;
+    private String commentText;
+    private int commentIndex;
 
     public Comments(String name, List<Integer> numofLikesList, int replies, String date) {
         this.name = name;

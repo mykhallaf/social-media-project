@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Comments {
     private String name;
-   private List<Integer> numofLikesList;
+   private int likeCount;
     private int replies;
     private String date;
     private List<String> commentList;

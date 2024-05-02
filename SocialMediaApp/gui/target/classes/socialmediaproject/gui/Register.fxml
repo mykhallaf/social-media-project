@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialmediaproject.gui.RegisterController">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #2b2b2b;">
+         <children>
+            <Label layoutX="192.0" layoutY="6.0" prefHeight="53.0" prefWidth="216.0" text="Registration" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="29.0" layoutY="81.0" prefHeight="17.0" prefWidth="94.0" text="First name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="firstNameTextField" layoutX="29.0" layoutY="108.0" prefHeight="25.0" prefWidth="536.0" promptText="First name" />
+      <Label layoutX="29.0" layoutY="148.0" prefHeight="17.0" prefWidth="94.0" text="Last name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lastNameTextField" layoutX="29.0" layoutY="178.0" prefHeight="25.0" prefWidth="536.0" promptText="Last name" />
+      <Label layoutX="29.0" layoutY="210.0" prefHeight="17.0" prefWidth="94.0" text="Username">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTextField" layoutX="29.0" layoutY="241.0" prefHeight="25.0" prefWidth="536.0" promptText="Username" />
+      <Label layoutX="29.0" layoutY="280.0" prefHeight="17.0" prefWidth="94.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailTextField" layoutX="29.0" layoutY="309.0" prefHeight="25.0" prefWidth="536.0" promptText="Email" />
+      <Label layoutX="29.0" layoutY="351.0" prefHeight="17.0" prefWidth="94.0" text="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="29.0" layoutY="389.0" prefHeight="25.0" prefWidth="536.0" promptText="Password" />
+      <Label layoutX="29.0" layoutY="425.0" prefHeight="20.0" prefWidth="182.0" text="Confirm password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="repasswordField" layoutX="29.0" layoutY="459.0" prefHeight="25.0" prefWidth="536.0" promptText="Confirm password" />
+      <Button layoutX="138.0" layoutY="534.0" mnemonicParsing="false" onAction="#signupButtonOnAction" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #2b2b2b;" text="Sign up" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelButton" layoutX="349.0" layoutY="534.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #2b2b2b;" text="Close" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="signupLabel" alignment="CENTER" layoutX="55.0" layoutY="500.0" prefHeight="17.0" prefWidth="463.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

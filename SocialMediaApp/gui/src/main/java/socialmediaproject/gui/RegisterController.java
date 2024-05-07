@@ -58,10 +58,9 @@ public class RegisterController {
         } else if (!password.equals(repassword)) {
             signupLabel.setText("Passwords do not match");
         } else {
-            // All validations passed, proceed with user registration
             registration.registerUser();
-            // Optionally, you can also set a success message if registration is successful
-            // signupLabel.setText("Registration successful!");
+            signupLabel.setText("User has been registered successfully!");
         }
+
     }
 }

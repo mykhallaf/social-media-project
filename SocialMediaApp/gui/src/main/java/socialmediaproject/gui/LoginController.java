@@ -56,7 +56,7 @@ public class LoginController implements Initializable{
 
         Login login = new Login(email, password);
         if (login.authenticateUser()) {
-            loginMessageLabel.setText("Congratulations!");
+            loginToDashboard();
         } else {
             loginMessageLabel.setText("Invalid input. Please try again.");
         }
@@ -85,6 +85,22 @@ public class LoginController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    public void loginToDashboard() {
+        try {
+            Stage stage = new Stage(); // Instantiate a new Stage object
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene scene = new Scene(root, 635, 437);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

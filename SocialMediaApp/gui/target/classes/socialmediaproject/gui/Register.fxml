@@ -65,7 +65,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="signupLabel" alignment="CENTER" layoutX="55.0" layoutY="500.0" prefHeight="17.0" prefWidth="463.0">
+      <Label fx:id="signupLabel" alignment="CENTER" layoutX="3.0" layoutY="500.0" prefHeight="19.0" prefWidth="593.0">
          <font>
             <Font size="13.0" />
          </font>

@@ -30,7 +30,6 @@ public class addPostController {
     public void addPost(ActionEvent event){
         String content = writeContent.getText();
         posts.createPost(content);
-        posts.createPost(content);
         writeContent.clear();
         System.out.println("Post Uploaded!");
         writeContent.setVisible(false);

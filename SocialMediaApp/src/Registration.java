@@ -1,3 +1,5 @@
+package socialmediaproject.gui;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -5,8 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
+
 
 public class Registration {
     // Database connection parameters
@@ -14,28 +15,13 @@ public class Registration {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "sqlmohakhallaf101101@#";
 
-    private String email;
-    private String username;
-    private String password;
-    private String firstName;
-    private String lastName;
+    private final String email;
+    private final String username;
+    private final String password;
+    private final String firstName;
+    private final String lastName;
 
     public Registration(String email, String username, String password, String firstName, String lastName) {
-        // Validate input data
-        Objects.requireNonNull(email, "Email cannot be null");
-        Objects.requireNonNull(username, "Username cannot be null");
-        Objects.requireNonNull(password, "Password cannot be null");
-        Objects.requireNonNull(firstName, "First name cannot be null");
-        Objects.requireNonNull(lastName, "Last name cannot be null");
-
-        // Validate email format
-        if (!isValidEmail(email)) {
-            throw new IllegalArgumentException("Invalid email format");
-        }
-        // Validate password
-        if (!isValidPassword(password)) {
-            throw new IllegalArgumentException("Password must contain a mix of uppercase and lowercase characters, numbers, and special characters");
-        }
 
         this.email = email;
         this.username = username;
@@ -47,7 +33,7 @@ public class Registration {
     public boolean registerUser() {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             // Prepare SQL query
-            String sql = "INSERT INTO users (email, password, first_name, last_name) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO users (email, password, first_name, last_name,username) VALUES (?, ?, ?, ?,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
             // Set parameters
@@ -55,11 +41,14 @@ public class Registration {
             statement.setString(2, password);
             statement.setString(3, firstName);
             statement.setString(4, lastName);
-
+            statement.setString(5, username);
             // Execute query
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Registration successful!");
+                // Create a User object with the registered user's information
+                User newUser = new User(email, username, firstName, lastName);
+                // You can perform further actions with this User object if needed
                 return true;
             } else {
                 System.out.println("Registration failed!");
@@ -70,21 +59,23 @@ public class Registration {
             return false;
         }
     }
-    // Email validation method using InternetAddress
-    private boolean isValidEmail(String email) {
-        try {
-            InternetAddress emailAddress = new InternetAddress(email);
-            // Ensure that the parsed email address has a valid format
-            emailAddress.validate();
-            return true;
-        } catch (AddressException e) {
-            // If an AddressException is thrown, the email address is invalid
+
+    public boolean isValidEmail(String email) {
+        if (email == null || email.isEmpty()) {
             return false;
         }
+
+        // Regular expression pattern for validating email addresses
+        String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+
+        return email.matches(emailPattern);
     }
 
+
+
+
     // Password validation method
-    private boolean isValidPassword(String password) {
+    public boolean isValidPassword(String password) {
         // Check if the password meets the specified criteria
         if (password.length() < 8) {
             return false; // Password length is less than 8 characters

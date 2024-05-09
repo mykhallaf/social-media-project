@@ -33,7 +33,7 @@ public class Registration {
     public boolean registerUser() {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             // Prepare SQL query
-            String sql = "INSERT INTO users (email, password, first_name, last_name) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO users (email, password, first_name, last_name,username) VALUES (?, ?, ?, ?,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
             // Set parameters
@@ -41,7 +41,7 @@ public class Registration {
             statement.setString(2, password);
             statement.setString(3, firstName);
             statement.setString(4, lastName);
-
+            statement.setString(5, username);
             // Execute query
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {

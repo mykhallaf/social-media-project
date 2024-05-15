@@ -6,7 +6,6 @@ public class SessionManager {
 
     public static void setCurrentUser(User user) {
         currentUser = user;
-        // Set the current user ID when setting the current user
         if (user != null) {
             currentUserID = user.getUserID();
         }

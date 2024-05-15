@@ -47,3 +47,16 @@ We want to give thanks to all member of the development team:
 
 # Project status
 **Finished!**
+
+## UML diagrams
+
+You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram about the Login procedure:
+
+```mermaid
+sequenceDiagram
+User ->> UI: Enter Email & Password
+UI ->> Backend: Send Email & password for verification
+Backend ->> Database: Retreive Data
+Database ->> Backend: Send Data
+Backend ->> UI: Compare Data & give feedback
+UI ->> User: Welcome to ASU Connet

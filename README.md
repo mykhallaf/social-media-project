@@ -48,7 +48,7 @@ We want to give thanks to all member of the development team:
 # Project status
 **Finished!**
 
-## UML diagrams
+# UML diagrams
 
 You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram about the Login procedure:
 

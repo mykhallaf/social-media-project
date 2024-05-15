@@ -43,7 +43,7 @@ We want to give thanks to all member of the development team:
  - Mariam                             | 22P0xxx
  - Basmala Khaled               | 22P0xxx
  - Ahmed Hazem                 | 22P0226
- - Mohamed A AbdelHamid | 22P0xxx
+ - Mohamed Ahmed AbdelHamid | 22P0287
 
 # Project status
 **Finished!**

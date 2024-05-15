@@ -373,20 +373,32 @@ public void likeOnAction(ActionEvent event) {
     }
 
     @FXML
-    public void addCommentOnAction(ActionEvent event) {
-        String commentContent = writeComment.getText().trim();
-        if (!commentContent.isEmpty()) {
-            Posts currentPost = posts.get(currentPostIndex);
-            addCommentToPost(currentUserId, currentPost.getPostId(), commentContent);
+public void addCommentOnAction(ActionEvent event) {
+    // Retrieve the content of the comment from the text input field
+    String commentContent = writeComment.getText();
+    
+    // Check law el comment content isn't empty
+    if (!commentContent.isEmpty()) {
+        // Retrieve the current post being displayed
+        Posts currentPost = posts.get(currentPostIndex);
+        
+        // Add the comment to the current post
+        addCommentToPost(currentUserId, currentPost.getPostId(), commentContent);
 
-            String currentUsername = getAuthorName(currentUserId);
+        // retrieve the username of the current user
+        String currentUsername = getAuthorName(currentUserId);
 
-            comments.appendText(currentUsername + ": " + commentContent + "\n");
+        // benetba3 the comment content along with the username to the comments area
+        comments.appendText(currentUsername + ": " + commentContent + "\n");
 
-            displayPost(currentPost);
-            writeComment.clear();
-        }
+        // refresh the display to show the updated post with the new comment
+        displayPost(currentPost);
+        
+        // bensheel ay comment kan maktoob men el text field
+        writeComment.clear();
     }
+}
+
 
 
     private void addCommentToPost(int userId, int postId, String content) {

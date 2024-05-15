@@ -13,7 +13,6 @@ public class Posts {
         this.likesCount = likesCount;
     }
 
-    // Getters
     public int getPostId() {
         return postId;
     }
@@ -26,7 +25,6 @@ public class Posts {
         return content;
     }
 
-    // Setters
     public void setPostId(int postId) {
         this.postId = postId;
     }

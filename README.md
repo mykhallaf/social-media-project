@@ -1,6 +1,6 @@
 # Social Media Desktop App
 
-Hi! This is README file that will help you navigate through the application and help you with any kind of problem you run into while using our application.
+Hi! This is README file that will help you navigate through the application and help you understand the program.
 
 # Description
 This is ASU Connect. It is a social media app that will connect all friends together to share posts and comment on your friends posts and interact with new people. The program gives you the ability to add your friends, so their posts appear to you. You can like and comment any post. Edit your profile page as you want: upload a profile image, bio and friends you have. Post your thoughts, hobbies, opinion to all the people make your voice heard in the world. 

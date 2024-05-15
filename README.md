@@ -38,10 +38,10 @@ Thanks for your help and support!
 
 We want to give thanks to all member of the development team:
 
- - Mohamed Khalaaf           | 22P0xxx
- - Mariam Gamgoun           | 22P0xxx
+ - Mohamed Khalaaf          | 22P0xxx
+ - Mariam Gamgoum           | 22P0172
  - Mariam Ramy              | 22P0219
- - Basmala Khaled               | 22P0xxx
+ - Basmala Khaled           | 22P0xxx
  - Ahmed Hazem                 | 22P0226
  - Mohamed Ahmed AbdelHamid | 22P0287
 

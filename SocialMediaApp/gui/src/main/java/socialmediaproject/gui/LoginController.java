@@ -85,7 +85,7 @@ public class LoginController implements Initializable{
 
     public void createAccountForm() {
         try {
-            Stage stage = new Stage(); // Instantiate a new Stage object
+            Stage stage = new Stage(); 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Register.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root, 600, 600);
@@ -100,7 +100,7 @@ public class LoginController implements Initializable{
 
     public void openDashboard() {
         try {
-            Stage stage = new Stage(); // Instantiate a new Stage object
+            Stage stage = new Stage(); 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root, 635, 437);
@@ -125,7 +125,7 @@ public class LoginController implements Initializable{
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                int userID = resultSet.getInt("user_id"); // Retrieve user_id from the result set
+                int userID = resultSet.getInt("user_id"); 
                 String username = resultSet.getString("username");
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
@@ -140,7 +140,7 @@ public class LoginController implements Initializable{
     }
 
     private int getUserID() {
-        return currentUserID; // Return the current user's ID
+        return currentUserID; 
     }
 
 

@@ -3,14 +3,14 @@
 Hi! This is README file that will help you navigate through the application and help you with any kind of problem you run into while using our application.
 
 # Description
-This is ASU Connect. It is a social media app that will connect all friends together to share posts and comment on your friends posts and interact with new people. The program gives you the ability to add your friends, so their posts appear to you. You can like and comment any post. Edit your profile page as you want: upload a profile image, bio and friends you have.
+This is ASU Connect. It is a social media app that will connect all friends together to share posts and comment on your friends posts and interact with new people. The program gives you the ability to add your friends, so their posts appear to you. You can like and comment any post. Edit your profile page as you want: upload a profile image, bio and friends you have. Post your thoughts, hobbies, opinion to all the people make your voice heard in the world. 
 
 # Badges
 ![Application logo](https://github.com/mykhallaf/social-media-project/blob/main/SocialMediaApp/gui/Images/Asu%20connect.jpg)
 
 # Installation
 
-All application Files can be found on [GitHub](https://github.com/mykhallaf/social-media-project/tree/main) website you will find README file and a folder called [SocialMediaApp](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp). Open the folder then download [gui](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp/gui) folder all the needed application files are in that folder. 
+All application Files can be found on [GitHub](https://github.com/mykhallaf/social-media-project/tree/main) website you will find README file and a folder called [SocialMediaApp](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp). Open the folder then download [gui](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp/gui) folder all the needed application files are in that folder. The application is constructed mainly in Java, JavaFx is used for GUI and sql is used to store data into database.
 ### Requirements
 
  -   **Java Compiler:** Latest JVM and SDK

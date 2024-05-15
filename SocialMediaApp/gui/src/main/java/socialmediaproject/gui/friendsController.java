@@ -25,7 +25,7 @@ public class friendsController {
     @FXML
     private Label stateLabel;
 
-    private int currentUserId; // This should be set to the logged-in user's ID
+    private int currentUserId; 
 
     @FXML
     private void initialize() {
@@ -69,7 +69,7 @@ public class friendsController {
             e.printStackTrace();
         }
 
-        return -1; // User not found
+        return -1; 
     }
 
     private boolean addFriend(int userId, int friendId) {
@@ -77,9 +77,8 @@ public class friendsController {
         String dbUsername = "root";
         String dbPassword = "sqlmohakhallaf101101@#";
 
-        // Check if the friendship already exists
         if (isFriend(userId, friendId)) {
-            return false; // Already friends
+            return false; 
         }
 
         try (Connection connection = DriverManager.getConnection(url, dbUsername, dbPassword)) {

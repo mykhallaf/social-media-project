@@ -29,7 +29,6 @@ public class Login {
     private void setEmail(String email) {
         Objects.requireNonNull(email, "Email cannot be null");
 
-        // Validate email format
         if (!isValidEmail(email)) {
             throw new IllegalArgumentException("Invalid email format");
         }
@@ -39,7 +38,6 @@ public class Login {
 
     private void setPassword(String password) {
         Objects.requireNonNull(password, "Password cannot be null");
-        // Validate password (optional)
         if (!isValidPassword(password)) {
             throw new IllegalArgumentException("Password have a mix of uppercase and lowercase characters, numbers, and special characters");
         }
@@ -56,7 +54,6 @@ public class Login {
             return false;
         }
 
-        // Regular expression pattern for validating email addresses
         String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
         return email.matches(emailPattern);
@@ -64,7 +61,6 @@ public class Login {
 
 
     private boolean isValidPassword(String password) {
-        // Check if the password meets the specified criteria
         if (password.length() < 8) {
             return false; // Password length is less than 8 characters
         }
@@ -85,24 +81,19 @@ public class Login {
             }
         }
 
-        // Check if all required criteria are met
         return hasUppercase && hasDigit && hasSpecialChar;
     }
     public boolean authenticateUser() {
-        // Database connection parameters
         String url = "jdbc:mysql://localhost:3306/social_media_app";
         String username = "root";
-        String dbPassword = "sqlmohakhallaf101101@#"; // Replace with your actual database password
+        String dbPassword = "sqlmohakhallaf101101@#"; 
 
-        // Database connection
         try (Connection connection = DriverManager.getConnection(url, username, dbPassword)) {
-            // SQL query to check if the user exists and password matches
             String query = "SELECT * FROM users WHERE email = ? AND password = ?";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, email);
                 statement.setString(2, password);
                 try (ResultSet resultSet = statement.executeQuery()) {
-                    // If a record is found, authentication is successful
                     return resultSet.next();
                 }
             }

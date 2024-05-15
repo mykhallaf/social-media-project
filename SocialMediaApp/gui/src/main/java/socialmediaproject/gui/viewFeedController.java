@@ -51,7 +51,7 @@ public class viewFeedController implements Initializable {
 
     private List<Posts> posts;
     private int currentPostIndex;
-    private int currentUserId; // Assuming current user ID is available after user logs in
+    private int currentUserId; 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -187,7 +187,7 @@ public class viewFeedController implements Initializable {
 
     private void displayPost(Posts post) {
         String authorName = getAuthorName(post.getUserId());
-        System.out.println("Author: " + authorName); // Debug statement
+        System.out.println("Author: " + authorName); 
         Image profileImage = getProfileImage(post.getUserId());
         int likeCount = getLikeCount(post.getPostId());
 
@@ -225,7 +225,7 @@ public class viewFeedController implements Initializable {
             if (resultSet.next()) {
                 authorName = resultSet.getString("username");
             } else {
-                System.out.println("User not found with user_id: " + userId); // Debug statement
+                System.out.println("User not found with user_id: " + userId); 
             }
 
         } catch (SQLException e) {
@@ -332,7 +332,7 @@ public class viewFeedController implements Initializable {
             while (resultSet.next()) {
                 String authorName = resultSet.getString("username");
                 String content = resultSet.getString("content");
-                System.out.println("Fetched comment: " + authorName + ": " + content); // Debug statement
+                System.out.println("Fetched comment: " + authorName + ": " + content); 
                 comments.add(authorName + ": " + content);
             }
 
@@ -350,10 +350,8 @@ public class viewFeedController implements Initializable {
             Posts currentPost = posts.get(currentPostIndex);
             addCommentToPost(currentUserId, currentPost.getPostId(), commentContent);
 
-            // Retrieve the current user's username
             String currentUsername = getAuthorName(currentUserId);
 
-            // Display the comment with the current user's username
             comments.appendText(currentUsername + ": " + commentContent + "\n");
 
             displayPost(currentPost);

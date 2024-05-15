@@ -21,7 +21,6 @@ public class addPostController {
     private int currentUserID;
 
     public addPostController() {
-        // Default constructor
     }
 
 
@@ -29,12 +28,10 @@ public class addPostController {
         this.currentUserID = currentUserID;
     }
 
-    // Method to create a post and store it in the database
-    // Method to create a post and store it in the database
     public void createPost(int currentUserID, String content) {
         String url = "jdbc:mysql://localhost:3306/social_media_app";
         String username = "root";
-        String password = "sqlmohakhallaf101101@#"; // Change to your actual database password
+        String password = "sqlmohakhallaf101101@#"; 
 
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
@@ -53,21 +50,12 @@ public class addPostController {
     }
 
 
-    // Event handler for the button click to create a post
     @FXML
     public void createPostHandler(ActionEvent event) {
-        // Get the content of the post from the TextArea
         String content = writeContent.getText();
-
-        // Get the current user ID from the session manager
         int currentUserID = SessionManager.getCurrentUserID();
-
-        // Create the post using the current user's ID
         createPost(currentUserID, content);
     }
-
-
-
 
 
 }

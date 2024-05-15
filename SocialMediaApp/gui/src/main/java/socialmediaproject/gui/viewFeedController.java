@@ -63,33 +63,54 @@ public class viewFeedController implements Initializable {
         }
     }
 
-    @FXML
-    public void sortByLikesOnAction(ActionEvent event) {
-        posts = getAllPostsSortedByLikes();
-        currentPostIndex = 0;
-        if (!posts.isEmpty()) {
-            displayPost(posts.get(currentPostIndex));
-        }
+   @FXML
+public void sortByLikesOnAction(ActionEvent event) {
+    // Retrieve all posts sorted by likes
+    posts = getAllPostsSortedByLikes();
+    
+    // Reset the current post index to the first post
+    currentPostIndex = 0;
+    
+    // Check if the list of posts is not empty
+    if (!posts.isEmpty()) {
+        // Display the first post in the sorted list
+        displayPost(posts.get(currentPostIndex));
     }
 
 
-    @FXML
-    public void likeOnAction(ActionEvent event) {
-        Posts currentPost = posts.get(currentPostIndex);
-        int postId = currentPost.getPostId();
+   @FXML
+public void likeOnAction(ActionEvent event) {
+    // Retrieve the displayed post
+    Posts currentPost = posts.get(currentPostIndex);
+    
+    //we get the id of the current post
+    int postId = currentPost.getPostId();
 
-        if (isPostLikedByUser(currentUserId, postId)) {
-            decrementLikesForPost(postId);
-            removeUserLike(currentUserId, postId);
-            likeButton.setText("Like");
-        } else {
-            incrementLikesForPost(postId);
-            addUserLike(currentUserId, postId);
-            likeButton.setText("Unlike");
-        }
-
-        displayPost(currentPost);
+    // check if the current user already liked el post
+    if (isPostLikedByUser(currentUserId, postId)) {
+        // law the post is already liked by the user, decrement the like count lel post
+        decrementLikesForPost(postId);
+        
+        // Remove  like for the post
+        removeUserLike(currentUserId, postId);
+        
+        // Update the like button text to indicate "Like"
+        likeButton.setText("Like");
+    } else {
+        // we law ba2a the post is not liked by the user, increment the like count for the post
+        incrementLikesForPost(postId);
+        
+        // Add the user's like for the post
+        addUserLike(currentUserId, postId);
+        
+        // Update the like button text to indicate "Unlike"
+        likeButton.setText("Unlike");
     }
+
+    // Refresh the display to show the updated post with like count and el text beta3 el zorar
+    displayPost(currentPost);
+}
+
 
     private void decrementLikesForPost(int postId) {
         executeUpdate("UPDATE posts SET likes_count = likes_count - 1 WHERE post_id = ?", postId);
@@ -169,18 +190,26 @@ public class viewFeedController implements Initializable {
         }
     }
 
+    // lama nedoos 3ala zorar next byegeeb el post el ba3do
     @FXML
     public void nextPostOnAction(ActionEvent event) {
+        // check if there are more posts ba3d el post el wa2feen 3aleh 
         if (currentPostIndex < posts.size() - 1) {
+            // benet7arak lel post el ba3do by incrementing the current post index 
             currentPostIndex++;
+            // display the next post in the list
             displayPost(posts.get(currentPostIndex));
         }
     }
 
+    // lama nedoos 3ala zorar previous byegeeb el post el ablo
     @FXML
     public void previousPostOnAction(ActionEvent event) {
+        // we check if there are posts available before the current post.
         if (currentPostIndex > 0) {
+            // benet7arak lel post el ablo by decrementing the current post index 
             currentPostIndex--;
+            // display the pevious post in the list
             displayPost(posts.get(currentPostIndex));
         }
     }

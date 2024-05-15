@@ -44,7 +44,6 @@ public class RegisterController {
     }
 
     public void signupButtonOnAction(ActionEvent event) {
-        // Reset signupLabel text
         signupLabel.setText("");
 
         String firstName = firstNameTextField.getText();
@@ -63,9 +62,9 @@ public class RegisterController {
         } else if (!password.equals(repassword)) {
             signupLabel.setText("Passwords do not match");
         } else {
-            int userID = registration.registerUser(); // Change registerUser() to return the userID
-            if (userID != -1) { // Check if registration was successful
-                User currentUser = new User(email, username, firstName, lastName, userID); // Pass userID to User constructor
+            int userID = registration.registerUser(); 
+            if (userID != -1) { 
+                User currentUser = new User(email, username, firstName, lastName, userID); 
                 SessionManager.setCurrentUser(currentUser);
                 signupLabel.setText("User has been registered successfully!");
             } else {

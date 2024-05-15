@@ -6,7 +6,6 @@ import java.util.Objects;
 
 
 public class Registration {
-    // Database connection parameters
     private static final String URL = "jdbc:mysql://localhost:3306/social_media_app";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "sqlmohakhallaf101101@#";
@@ -30,18 +29,15 @@ public class Registration {
         int userID = -1;
 
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
-            // Prepare SQL query
             String sql = "INSERT INTO users (email, password, first_name, last_name, username) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            // Set parameters
             statement.setString(1, email);
             statement.setString(2, password);
             statement.setString(3, firstName);
             statement.setString(4, lastName);
             statement.setString(5, username);
 
-            // Execute query
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Registration successful!");
@@ -65,20 +61,15 @@ public class Registration {
             return false;
         }
 
-        // Regular expression pattern for validating email addresses
         String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
         return email.matches(emailPattern);
     }
 
 
-
-
-    // Password validation method
     public boolean isValidPassword(String password) {
-        // Check if the password meets the specified criteria
         if (password.length() < 8) {
-            return false; // Password length is less than 8 characters
+            return false; 
         }
 
         boolean hasUppercase = false;

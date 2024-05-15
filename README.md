@@ -10,7 +10,7 @@ This is ASU Connect. It is a social media app that will connect all friends toge
 
 # Installation
 
-All application Files can be found on [GitHub](https://github.com/mykhallaf/social-media-project/tree/main) website you will find README file and a folder called [SocialMediaApp](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp). Open the folder then download [gui](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp/gui) folder all the needed application files are in that folder. The application is constructed mainly in Java, JavaFx is used for GUI and sql is used to store data into database.
+All application Files can be found on [GitHub](https://github.com/mykhallaf/social-media-project/tree/main) website you will find README file and a folder called [SocialMediaApp](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp). Open the folder then download [gui](https://github.com/mykhallaf/social-media-project/tree/main/SocialMediaApp/gui) folder all the needed application files are in that folder. The application is constructed mainly in **Java**, **JavaFx** is used for GUI and **sql** is used to store data into database.
 ### Requirements
 
  -   **Java Compiler:** Latest JVM and SDK

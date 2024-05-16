@@ -9,6 +9,7 @@ This is ASU Connect. It is a social media app that will connect all friends toge
 ![Application logo](https://github.com/mykhallaf/social-media-project/blob/main/SocialMediaApp/gui/Images/Asu%20connect.jpg)
 
 # Visuals
+tutorial Video
 [![Tutorial Video](https://github.com/mykhallaf/social-media-project/blob/main/SocialMediaApp/Video.png)](https://youtu.be/e21T7QkpeIQ)
 
 

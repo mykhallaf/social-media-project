@@ -25,7 +25,7 @@ All application Files can be found on [GitHub](https://github.com/mykhallaf/soci
 # Usage
  
  # Support
-If there is any program, you faced or you want to make a feedback contact any of these emails ahmedhazem200411@gmail.com - mykalaaf@gmail.com - mariamramy1074@gmail.com
+If there is any program, you faced or you want to make a feedback contact any of these emails ahmedhazem200411@gmail.com - mykhallaf@gmail.com - mariamramy1074@gmail.com
 
 # Roadmap
 The development team is working on: (Next Update)
